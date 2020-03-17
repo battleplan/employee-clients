@@ -1,0 +1,12 @@
+<h2>Your Balance is {{ currentBalance | currency }}</h2>
+<div class="form-group">
+  <input type="number"
+         #amount
+         class="form-control">
+  <div>
+    <button (click)="deposit(amount)"
+            class="btn btn-primary">Deposit</button>
+    <button (click)="withdraw(amount)"
+            class="btn btn-primary">Withdraw</button>
+  </div>
+</div>

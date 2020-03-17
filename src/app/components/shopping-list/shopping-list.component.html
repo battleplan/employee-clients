@@ -1,0 +1,19 @@
+<div class="form-group">
+  <label for="item">Item</label>
+  <input class="form-control"
+         #angel
+         name="item">
+  <button class="btn btn-success"
+          (click)="addItem(angel)">Add Item</button>
+</div>
+<section>
+  <ul class="list-unstyled">
+    <li class="alert alert-info"
+        *ngFor="let item of items">
+      <button *ngIf="!item.purchased"
+              (click)="markPurchased(item)"
+              class="btn btn-sm btn-danger">X</button>
+      <span [ngClass]="{ 'purchased': item.purchased}">{{item.description}}</span>
+    </li>
+  </ul>
+</section>
