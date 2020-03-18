@@ -18,8 +18,8 @@ import { BankAccountService, StandardBonusCalculator } from './services/bank-acc
     AppRoutingModule
   ],
   providers: [
-    BankAccountService,
-    StandardBonusCalculator
+    StandardBonusCalculator,
+    BankAccountService
   ],
   bootstrap: [AppComponent]
 })

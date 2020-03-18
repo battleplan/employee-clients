@@ -17,11 +17,13 @@ export class BankKioskComponent implements OnInit {
   }
 
   deposit(amountEl: HTMLInputElement) {
-    this.doTransaction(this.bankAccount.deposit, amountEl.valueAsNumber);
+    this.bankAccount.deposit(amountEl.valueAsNumber);
+    this.currentBalance = this.bankAccount.getBalance();
   }
 
   withdraw(amountEl: HTMLInputElement) {
-    this.doTransaction(this.bankAccount.withdraw, amountEl.valueAsNumber);
+    this.bankAccount.withdraw(amountEl.valueAsNumber);
+    this.currentBalance = this.bankAccount.getBalance();
   }
 
   doTransaction(op: Action<number>, amount: number) {
