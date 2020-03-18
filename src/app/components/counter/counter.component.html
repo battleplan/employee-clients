@@ -1,0 +1,27 @@
+<button class="btn btn-primary"
+        [disabled]="atBeginning$ | async"
+        (click)="decrement()">-</button>
+<span>{{ current$ | async }}</span>
+<button class="btn btn-primary"
+        (click)="increment()">+</button>
+<div>
+  <button class="btn btn-danger"
+          [disabled]="resetDisabled$ | async"
+          (click)="reset()">Reset</button>
+</div>
+<div class="btn-group"
+     role="group"
+     aria-label="Count By">
+  <button type="button"
+          [disabled]="(countingBy$ | async) === 1"
+          (click)="countBySet(1)"
+          class="btn btn-secondary">1</button>
+  <button type="button"
+          [disabled]="(countingBy$ | async) === 3"
+          (click)="countBySet(3)"
+          class="btn btn-secondary">3</button>
+  <button type="button"
+          [disabled]="(countingBy$ | async) === 5"
+          (click)="countBySet(5)"
+          class="btn btn-secondary">5</button>
+</div>
