@@ -12,12 +12,18 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { reducers } from './reducers';
 import { EffectsModule } from '@ngrx/effects';
 import { CounterEffects } from './effects/counter.effects';
+import { EmployeesComponent } from './components/employees/employees.component';
+import { EmployeeListComponent } from './components/employees/components/employee-list/employee-list.component';
+import { EmployeeEntryComponent } from './components/employees/components/employee-entry/employee-entry.component';
 @NgModule({
   declarations: [
     AppComponent,
     ShoppingListComponent,
     BankKioskComponent,
-    CounterComponent
+    CounterComponent,
+    EmployeesComponent,
+    EmployeeListComponent,
+    EmployeeEntryComponent
   ],
   imports: [
     BrowserModule,
