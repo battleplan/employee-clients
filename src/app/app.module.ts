@@ -15,6 +15,8 @@ import { CounterEffects } from './effects/counter.effects';
 import { EmployeesComponent } from './components/employees/employees.component';
 import { EmployeeListComponent } from './components/employees/components/employee-list/employee-list.component';
 import { EmployeeEntryComponent } from './components/employees/components/employee-entry/employee-entry.component';
+import { HttpClientModule } from '@angular/common/http';
+import { EmployeeEffects } from './effects/employees.effects';
 @NgModule({
   declarations: [
     AppComponent,
@@ -30,7 +32,8 @@ import { EmployeeEntryComponent } from './components/employees/components/employ
     AppRoutingModule,
     StoreModule.forRoot(reducers),
     StoreDevtoolsModule.instrument(),
-    EffectsModule.forRoot([CounterEffects])
+    EffectsModule.forRoot([CounterEffects, EmployeeEffects]),
+    HttpClientModule
   ],
   providers: [
     StandardBonusCalculator,

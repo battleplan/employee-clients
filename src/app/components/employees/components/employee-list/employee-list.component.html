@@ -1,1 +1,10 @@
-<p>employee-list works!</p>
+<div class="card"
+     *ngFor="let employee of model$ | async">
+  <div class="card-body">
+    <h5 class="card-title">{{ employee.firstName }} {{ employee.lastName }}</h5>
+    <h6 class="card-subtitle mb-2 text-muted">Works in {{ employee.department }}</h6>
+    <p class="card-text">{{ employee.firstName }} {{ employee.lastName }} is Employee {{employee.id}} and works in the
+      {{employee.department}} department</p>
+
+  </div>
+</div>
