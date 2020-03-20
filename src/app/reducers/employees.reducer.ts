@@ -25,7 +25,14 @@ const initialState = adapter.getInitialState();
 // };
 const reducerFunction = createReducer(
   initialState,
-  on(actions.employeesLoadedSuccessfully, (s, a) => adapter.setAll(a.payload, s))
+  on(actions.employeesLoadedSuccessfully, (s, a) => adapter.setAll(a.payload, s)),
+  on(actions.employeeAdded, (s, a) => adapter.addOne(a.payload, s)),
+  on(actions.employeeAddedSuccessfully, (s, a) => {
+    const tempState = adapter.removeOne(a.oldId, s);
+    return adapter.addOne(a.employee, tempState);
+  }),
+  on(actions.employeeFired, (s, a) => adapter.removeOne(a.payload.id, s)),
+  on(actions.employeeFiredFailure, (s, a) => adapter.addOne(a.payload, s))
 );
 
 export function reducer(state: EmployeeState = initialState, action: Action) {

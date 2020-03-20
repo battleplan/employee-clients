@@ -3,4 +3,5 @@ export interface EmployeeListModel {
   firstName: string;
   lastName: string;
   department: string;
+  isTemporary: boolean;
 }
